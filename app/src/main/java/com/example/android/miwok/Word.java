@@ -9,15 +9,17 @@ public class Word {
     private String englishTranslation;
     private String miwokTranslation;
     private int imageResource = NO_IMAGE_RESOURCE;
+    private int soundResource;
     private static final int NO_IMAGE_RESOURCE = -1;
 
-    public Word(String englishTranslation, String miwokTranslation){
+    public Word(String englishTranslation, String miwokTranslation, int soundResource){
         this.englishTranslation = englishTranslation;
         this.miwokTranslation = miwokTranslation;
+        this.soundResource = soundResource;
     }
 
-    public Word(String englishTranslation, String miwokTranslation, int imageResource){
-        this(englishTranslation, miwokTranslation);
+    public Word(String englishTranslation, String miwokTranslation, int soundResource, int imageResource){
+        this(englishTranslation, miwokTranslation, soundResource);
         this.imageResource = imageResource;
     }
 
@@ -31,8 +33,19 @@ public class Word {
 
     public int getImageResource() { return this.imageResource; }
 
+    public int getSoundResource() { return this.soundResource; }
+
     public boolean hasImage(){
         return imageResource != NO_IMAGE_RESOURCE;
     }
 
+    @Override
+    public String toString() {
+        return "Word{" +
+                "englishTranslation='" + englishTranslation + '\'' +
+                ", miwokTranslation='" + miwokTranslation + '\'' +
+                ", imageResource=" + imageResource +
+                ", soundResource=" + soundResource +
+                '}';
+    }
 }
