@@ -15,24 +15,35 @@
         android:id="@+id/textCard"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:gravity="center_vertical"
         android:background="@color/category_numbers">
-        <TextView
-            android:id="@+id/miwak_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="lutti"
-            style="@style/Miwok"
-            android:layout_marginLeft="16dp"
-            />
-        <TextView
-            android:id="@+id/english_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/English"
-            android:text="one"
-            android:layout_marginLeft="16dp"
-            />
+        <LinearLayout
+            android:layout_weight="7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/miwak_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="lutti"
+                style="@style/Miwok"
+                android:layout_marginLeft="16dp"
+                />
+            <TextView
+                android:id="@+id/english_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/English"
+                android:text="one"
+                android:layout_marginLeft="16dp"
+                />
+        </LinearLayout>
+        <ImageView
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>
