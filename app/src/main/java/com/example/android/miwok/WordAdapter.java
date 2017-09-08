@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -70,6 +71,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
             public void onClick(View view) {
                 MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), newWord.getSoundResource());
                 mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.release();
+                        Toast.makeText(getContext(), "It was released", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
